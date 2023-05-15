@@ -1,0 +1,36 @@
+systeme de vote en ligne : Carte
+
+Concept : 
+    - Carte a pour objectif de permettre aux membres du lycée de soumettre un vote à un groupe d'individus choisis
+    - L'organisateur du vote peut choisir de : 
+        - un vote à choix multiples (nombre limité de réponses possibles ou non) ou alors un vote à réponse unique
+            - c'est fini
+    - L'utilisatrur devra spécifier la durée du vote
+    - Après la durée du vote un lien sera généré pour donner accès au vote
+    - Des données soumises à une analyse rigoureuse deront être rendues à l'organisateur du vote
+
+ENTRER : 
+    - Préalablement l'organisateur devra se munir d'un compte Carte : 
+        - Identifiant utilisateur (nombre entier naturel généré automatiquement)
+        - Nom d'utlilisateur (renseigné par l'utilisateur)
+        - email de l'utilisateur (renseigné par l'utilisateur)
+        - Mot de passe (créé par l'utilisateur)
+    - Les élécteurs devront renseigner pour chaque vote (par défaut) :
+        - Sexe (masculin/féminin/autre)
+        - Classe (au lycéé)
+        - Age
+        - Date (du vote)
+    - D'autres données des élécteurs pourront être demandées par l'organisateur du vote 
+
+PRESENTATION DU VOTE :
+    - L'utilisateur peut renseigner ce qu'il veut, tant que toutes les options sont prédéfinies
+
+CAHIER DES CHARGES :
+    - Type de l'application : appliation web 
+    - Langage serveur : python3
+    - Langage de description : html/CSS
+    - Langage d'animation : JavaScript
+    - Framework web : flask
+    - Bibliothèque mathématique : math
+    - Algorithme de hachage : sha256 
+    -                        
