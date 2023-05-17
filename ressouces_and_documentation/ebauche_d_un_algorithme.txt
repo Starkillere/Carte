@@ -15,6 +15,7 @@ ENTRER :
         - Nom d'utlilisateur (renseigné par l'utilisateur)
         - email de l'utilisateur (renseigné par l'utilisateur)
         - Mot de passe (créé par l'utilisateur)
+        - date
     - Les élécteurs devront renseigner pour chaque vote (par défaut) :
         - Sexe (masculin/féminin/autre)
         - Classe (au lycéé)
