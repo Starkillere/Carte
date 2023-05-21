@@ -185,8 +185,12 @@ def print_vote(access):
 
     else:
         voteselect = Votes.query.filter_by(Access=access).first()
-        if voteselect == None:
-            return render_template('print_vote.html', Access=access, options=voteselect.VoteCastique.split(','), type_of_choice=voteselect.MultipleChoice)
+        if voteselect != None:
+            if voteselect.VoteStatue == Activate.on:
+                return render_template('print_vote.html', Access=access, options=voteselect.VoteCastique.split(','), type_of_choice=voteselect.MultipleChoice)
+            else:
+                flash('Ce vote est out', 'message')
+                return redirect(url_for('acceuil'))
         else:
             flash('Vote inexistant', 'message')
             return redirect(url_for('acceuil'))
