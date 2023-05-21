@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block page %}
+    <div class="acceuil">
+        {% if connect == False %}
+            <div class="register-content">
+                <div class="register">
+                    <div class="title">
+                        <h2 onclick="printlogin()" class="h2login activeh2">Connexion </h2>
+                        <h2 onclick="printsigin()" class="h2singin">S'enregistrer</h2>
+                    </div>
+                    <div class="login active">
+                        <form action="{{url_for('login')}}" method="post">
+                            <br><input type="text" name="username" id="username" placeholder="Nom d'utilisateur"><br>
+                            <br><input type="email" name="useremail" id="useremail" placeholder="Adresse e-mail"><br>
+                            <br><input type="password" name="userpassword" id="userpassword" placeholder="Mot de passe"><br>
+                            <br><a href="{{url_for('mot_de_passe_oublie')}}"><p>Mot de passe oublié ?</p></a><br>
+                            <br><button type="submit" class="btn-sub">Connexion</button><br>
+                        </form>
+                    </div>
+                    <div class="sigin">
+                        <form action="{{url_for('sigin')}}" method="post">
+                            <br><input type="text" name="username" id="username" placeholder="Nom d'utilisateur"><br>
+                            <br><input type="email" name="useremail" id="useremail" placeholder="Adresse e-mail"><br>
+                            <br><input type="password" name="userpassword" id="userpassword" placeholder="Mot de passe"><br>
+                            <br><button type="submit" class="btn-sub">S'enregistrer</button><br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    <script src="{{url_for('static', filename='js/change_mode.js')}}"></script>
+{% endblock %}

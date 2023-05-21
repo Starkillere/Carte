@@ -1,0 +1,95 @@
+.acceuil .register-content .register .title
+{
+    display: flex;
+}
+
+.acceuil .register-content .register .title h2
+{
+    padding: 14.8px;
+    cursor:pointer;
+    color: #fff;
+}
+
+.acceuil .register-content .register .title .activeh2
+{
+    background-color: #00000085;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color:#058eec;
+}
+
+.acceuil .register-content .register
+{
+    position:absolute;
+    top:120px;
+    right:100px;
+    width: 380px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.205);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 20px 2px;
+}
+
+.acceuil .register-content .register .login, .acceuil .register-content .register .sigin
+{
+    display: none;
+    background-color: #00000085;
+    padding: 15px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.acceuil .register-content .register .active
+{
+    display: block;
+}
+
+.acceuil .register-content .register .login input, .acceuil .register-content .register .sigin input
+{
+    width: 240px;
+    height: 35px;
+    background: transparent;
+    border-bottom: 1px solid #058eec;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color:#ffffff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-family: sans-serif;
+}
+
+.acceuil .register-content .register .login input:focus, .acceuil .register-content .register .sigin input:focus
+{
+    outline: none;
+}
+
+::placeholder
+{
+    color: #8d8d8d;
+    font-family: 'Trebuchet MS';
+}
+
+.acceuil .register-content .register .btn-sub
+{
+    width: 100px;
+    height: 40px;
+    background: #058eec;
+    border: 2px solid #058eec;
+    margin-top: 3px;
+    color: #fff;
+    font-size: 15px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.acceuil .register-content .register .login a
+{
+    color: #058eec;
+}

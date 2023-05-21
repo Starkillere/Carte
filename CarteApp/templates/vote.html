@@ -1,0 +1,27 @@
+<div class="vote">
+    <div class="title">
+        <h1>{{titre}}</h1>
+    </div>
+    <div class="type_off_choice">
+        {% if type_of_choice == "on" %}
+            <h2>Choix multiple</h2>
+        {% else %}
+            <h2>Choix unique</h2>
+        {% endif %}
+    </div>
+    <div class="choice">
+        <form action="{{url_for('print_vote', Access=access)}}" method="post">
+            {% if type_of_choice == "on" %}
+                {% for option in options %}
+                    <input type="checkbox" name="{{option}}" id="{{option}}" value="{{option}}">
+                    <label for="{{option}}">{{option}}</label>
+                {% endfor %}
+            {% else %}
+                {% for option in options %}
+                    <input type="radio" name="{{option}}" id="{{option}}" value="{{option}}">
+                    <label for="{{option}}">{{option}}</label>
+                {% endfor %}
+            {% endif %}
+        </form>
+    </div>
+</div>

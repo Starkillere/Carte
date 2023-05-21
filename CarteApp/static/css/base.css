@@ -1,0 +1,33 @@
+*
+{
+    margin: 0;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+.page
+{
+    padding: 50px;
+}
+
+.alert
+{
+  position: relative;
+  margin-top:2%;
+  margin-left: 5%;
+  background-color: #f8d7da;
+  color: rgb(0, 0, 0);
+  width: 90%;
+  text-align: center;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.alert ul
+{
+  list-style-type:none;
+  
+}
