@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block page %}
 <div class="creat">
     <div class="form">
         <form action="{{url_for('creat_new_vote')}}" method="post">
@@ -12,10 +14,12 @@
                     </div>
                 </div>
             </div>
-            <div class="send_zone">
+            <div class="send_zone" id="send_zone">
                 <input type="submit" value="Crée" class="submit-btn">
+                <input type="button" value="supprimer" id="sup" onclick="del()" style="display: none;">
             </div>
         </form>
     </div>
 </div>
 <script src="{{url_for('static', filename='js/BuldOptions.js')}}"></script>
+{% endblock %}

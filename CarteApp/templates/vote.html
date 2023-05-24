@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block page %}
 <div class="vote">
     <div class="title">
         <h1>{{titre}}</h1>
@@ -10,7 +12,7 @@
         {% endif %}
     </div>
     <div class="choice">
-        <form action="{{url_for('print_vote', Access=access)}}" method="post">
+        <form action="{{url_for('print_vote', access=Access)}}" method="post">
             {% if type_of_choice == "on" %}
                 {% for option in options %}
                     <input type="checkbox" name="{{option}}" id="{{option}}" value="{{option}}">
@@ -22,6 +24,8 @@
                     <label for="{{option}}">{{option}}</label>
                 {% endfor %}
             {% endif %}
+            <button type="submit">Envoyer</button>
         </form>
     </div>
 </div>
+{% endblock %}

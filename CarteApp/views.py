@@ -165,7 +165,7 @@ def creat_new_vote():
             return render_template('creat.html')
     return redirect(url_for('acceuil'))
 
-@app.route('/vote/<access>', methods=['GET'])
+@app.route('/vote/<access>', methods=['GET', "POST"])
 def print_vote(access):
     if request.method == "POST":
         form_content = list(dict(request.form).values())
@@ -187,7 +187,7 @@ def print_vote(access):
         voteselect = Votes.query.filter_by(Access=access).first()
         if voteselect != None:
             if voteselect.VoteStatue == Activate.on:
-                return render_template('print_vote.html', Access=access, options=voteselect.VoteCastique.split(','), type_of_choice=voteselect.MultipleChoice)
+                return render_template('vote.html', Access=access, options=voteselect.VoteCastique.split(','), type_of_choice=voteselect.MultipleChoice, titre=voteselect.VoteTitle)
             else:
                 flash('Ce vote est out', 'message')
                 return redirect(url_for('acceuil'))
