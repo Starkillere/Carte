@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, send_file, redirect, url_for,
 from flask_sqlalchemy import SQLAlchemy
 from datetime import timedelta, datetime
 from flask_mail import Mail
+from . import MyStat
 import secrets
 import hashlib
 import enum
@@ -194,8 +195,20 @@ def print_vote(access):
         else:
             flash('Vote inexistant', 'message')
             return redirect(url_for('acceuil'))
+        
+@app.route("/tableau-de-bord", methods=['GET', 'POST'])
+def tableau_de_bord():
+    if "CONNECT" in session:
+        voteselect = Votes.query.filter_by(UserID=session["UserID"]).all()
+        return render_template("tableau_de_bord.html", votes=voteselect)
+    return redirect(request.url)
 
-@app.route('/my-statistique-for/<vote_creator>/<vote_name>', methods=['GET'])
-def my_statistique(vote_creator, vote_name):
-    #retourner les statistique
-    pass
+@app.route('/my-statistique-for/<UserName>/<Access>', methods=['GET', 'POST'])
+def my_statistique(UserName, Access):
+    if "CONNECT" in session:
+        if session["UserName"] == UserName:
+            if request.method == 'POST':
+               return send_file(os.path.join((f"CarteApp/static/{app.config['CSVFOLDER']}"), Access+'.csv'), attachment_filename='Mydata.pdf')
+            mystat = MyStat.MyStat(os.path.join((f"CarteApp/static/{app.config['CSVFOLDER']}"), Access+'.csv'))
+            return render_template('my-statistique.html', stat=mystat.dict_smoll_stat(), head=mystat.head)
+    return redirect(request.url)
