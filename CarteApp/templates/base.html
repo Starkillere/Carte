@@ -1,38 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr-fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/base.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/acceuil.css')}}">
-    <title>Carte</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <a href="{{url_for('acceuil')}}"><li>Home</li></a>
-                {% if connect == True %}
-                    <a href="{{url_for('creat_new_vote')}}"><li>Crée un vote</li></a>
-                {% endif %}
-            </ul>
-        </nav>
-    </header>
-    <div class="alert" role="alert">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-          {% if messages %}
-            <ul class=flashes>
-            {% for category, message in messages %}
-              <li class="{{ category }}">{{ message }}</li>
-            {% endfor %}
-            </ul>
-          {% endif %}
-        {% endwith %}
-    </div>
-    <div class="page">
-        {% block page %}
-        {% endblock %}
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/base.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/acceuil.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/creat.css')}}">
+        <script src="https://kit.fontawesome.com/be6abcb2b9.js" crossorigin="anonymous"></script>
+        <link rel="icon" href="{{url_for('static', filename='images/favicon.ico')}}">
+        <title>Carte</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <a href="{{url_for('acceuil')}}" ><img src="{{url_for('static', filename='images/logo.png')}}" alt="logo" class="logo"></a>
+                    <ul class="nav-links">
+                        <li class="activepop"><a href="{{url_for('acceuil')}}" ><i class="fa-solid fa-house fa-2xl"></i></a></li>
+                        {% if connect == True %}
+                            <li class="activepop"><a href="{{url_for('creat_new_vote')}}" target="_blank"><i class="fa-solid fa-circle-plus fa-2xl"></i></a></li>
+                            <li class="activepop"><a href="{{url_for('tableau_de_bord')}}"><i class="fa-solid fa-check-to-slot fa-2xl"></i></a></li>
+                        {% endif %}
+                    </ul>
+            </nav>
+        </header>
+        <div class="alert" role="alert">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                <ul class=flashes>
+                {% for category, message in messages %}
+                  <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+        </div>
+        <div class="page">
+            {% block page %}{% endblock %}
+        </div>
+        <div class="footer ">
+            <footer>
+              <div class="colum">
+                <div class="line"><a href="https://github.com/Starkillere/Carte" target="_blank">Documentation</a></div>
+                <div class="line"><a href="https://github.com/Starkillere/Carte" target="_blank">Dépôt Github</div>
+              </div>
+              <div class="colum">
+                <div class="line"><a href="#">© <script>document.write(new Date().getFullYear());</script> par Club-info-math LPO SADA</h2></a></div>
+              </div>
+            </footer>
+        </div>
+        <div class="backgroond">
+
+        </div>
+    </body>
 </html>

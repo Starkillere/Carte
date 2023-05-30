@@ -118,14 +118,6 @@ def sigin():
 def mot_de_passe_oublie():
     pass
 
-@app.route('/tableau-de-bord', methods=['GET'])
-def tableau_de_bord():
-    if "CONNECT" in session:
-        userID = Users.query.filter_by(UserName=session['UserName']).all()
-        return render_template('tableau_de_bord.html', content=Votes.query.filter_by(UserID=userID).all())
-    else:
-        return redirect(url_for('acceuil'))
-
 @app.route('/creat-new-vote', methods=['GET', 'POST'])
 def creat_new_vote():
     if "CONNECT" in session:
@@ -163,7 +155,7 @@ def creat_new_vote():
                 flash('Vous avez oubliè de renseigner les options de réponse !', 'error')
                 return redirect(request.url)
         else:
-            return render_template('creat.html')
+            return render_template('creat.html', connect=session['CONNECT'])
     return redirect(url_for('acceuil'))
 
 @app.route('/vote/<access>', methods=['GET', "POST"])
@@ -200,7 +192,7 @@ def print_vote(access):
 def tableau_de_bord():
     if "CONNECT" in session:
         voteselect = Votes.query.filter_by(UserID=session["UserID"]).all()
-        return render_template("tableau_de_bord.html", votes=voteselect)
+        return render_template("tableau_de_bord.html", votes=voteselect, connect=session['CONNECT'])
     return redirect(request.url)
 
 @app.route('/my-statistique-for/<UserName>/<Access>', methods=['GET', 'POST'])
@@ -210,5 +202,5 @@ def my_statistique(UserName, Access):
             if request.method == 'POST':
                return send_file(os.path.join((f"CarteApp/static/{app.config['CSVFOLDER']}"), Access+'.csv'), attachment_filename='Mydata.pdf')
             mystat = MyStat.MyStat(os.path.join((f"CarteApp/static/{app.config['CSVFOLDER']}"), Access+'.csv'))
-            return render_template('my-statistique.html', stat=mystat.dict_smoll_stat(), head=mystat.head)
+            return render_template('my-statistique.html', stat=mystat.dict_smoll_stat(), head=mystat.head, connect=session['CONNECT'])
     return redirect(request.url)

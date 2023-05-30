@@ -3,20 +3,22 @@
 <div class="creat">
     <div class="form">
         <form action="{{url_for('creat_new_vote')}}" method="post">
-            <div class="creat_zone">
-                <input type="text" name="title" id="title", placeholder="Titre" required>
+            <div class="creat_zone"> 
+                <input type="text" name="title" id="title" class="title" placeholder="Titre" required>
                 <div class="creat_content_zone">
                     <input type="checkbox" name="multiple-choice" id="multiple-choice">
                     <label for="multiple-choice">Choix multiple</label>
                     <div class="add_options">
                         <div class="creat_option_zone" id="creat_option_zone"></div>
-                        <button type="button" onclick="AddOptions()" class="">Ajouter une option</button>
+                        <div class="btn">
+                            <button type="button" onclick="AddOptions()" class="">Ajouter une option</button>
+                            <input type="button" value="supprimer" id="sup" onclick="del()" style="display: none;">
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="send_zone" id="send_zone">
                 <input type="submit" value="Crée" class="submit-btn">
-                <input type="button" value="supprimer" id="sup" onclick="del()" style="display: none;">
             </div>
         </form>
     </div>

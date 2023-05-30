@@ -1,3 +1,39 @@
+.acceuil .conteiner
+{
+    padding-top: 100px;
+    margin: 50px;
+}
+
+.acceuil .conteiner .title h2
+{
+    font-size: 50px;
+    font-weight: 800;
+    padding: 2px;
+}
+
+.acceuil .conteiner .title h2 span
+{
+    font-size: 20px;
+    font-weight: 800;
+    color:#8d8d8d;
+}
+
+.acceuil .action
+{
+    margin-top: 80px;
+}
+
+.acceuil .action a
+{
+    margin: 5px;
+    padding: 20px;
+    background-color: #058eec;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+    border-radius: 3px;
+}
+
 .acceuil .register-content .register .title
 {
     display: flex;
@@ -8,6 +44,11 @@
     padding: 14.8px;
     cursor:pointer;
     color: #fff;
+}
+
+.acceuil .register-content .register .title .h2singin
+{
+    width: 100%;
 }
 
 .acceuil .register-content .register .title .activeh2
@@ -21,11 +62,11 @@
 .acceuil .register-content .register
 {
     position:absolute;
-    top:120px;
-    right:100px;
-    width: 380px;
+    top:100px;
+    right:50px;
+    width: 400px;
     height: 500px;
-    background: rgba(0, 0, 0, 0.205);
+    background: rgba(255, 255, 255, 0.205);
     border-radius: 10px;
     padding: 25px;
     margin: 20px 2px;

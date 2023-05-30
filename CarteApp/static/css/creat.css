@@ -1,0 +1,97 @@
+.creat form
+{
+    position:relative;
+    margin-top:5%;
+    margin-left: 25%;
+    width: 45%;
+    border: 1px solid #feae;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0px 5px 5px rgb(0, 0, 0);
+}
+
+.creat form .creat_zone
+{
+    padding: 30px;
+}
+
+.creat form .creat_zone .title
+{
+    width: 440px;
+    height: 35px;
+    background: transparent;
+    border-bottom: 1px solid #058eec;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color:#ffffff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-family: sans-serif;
+}
+
+.creat form .creat_zone .title:focus
+{
+    outline: none;
+}
+
+.creat form .creat_zone .creat_content_zone
+{
+    margin-top: 20px;
+}
+
+.creat form .creat_zone .creat_content_zone .add_options .creat_option_zone
+{
+    display: block;
+}
+
+.creat form .creat_zone .creat_content_zone .add_options .creat_option_zone .creat_base_creat_content_zoneadd_options_input_option
+{
+    display: block;
+    margin: 30px;
+    width: 240px;
+    height: 35px;
+    background: transparent;
+    border-bottom: 1px solid #feae;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color:#ffffff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-family: sans-serif;
+}
+
+.creat form .creat_zone .creat_content_zone .add_options .creat_option_zone .creat_base_creat_content_zoneadd_options_input_option:focus
+{
+    outline: none;
+}
+
+.creat form .creat_zone .creat_content_zone .add_options .btn 
+{
+    display: flex;
+}
+
+.creat form .creat_zone .creat_content_zone .add_options .btn button, .creat form .creat_zone .creat_content_zone .add_options .btn input
+{
+    margin: 20px;
+    padding: 5px;
+    background-color: #058eec;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 3px;
+}
+
+.creat form .send_zone input
+{
+    margin: 20px;
+    padding: 5px;
+    background-color: #058eec;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 3px;
+}

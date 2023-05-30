@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
 {% block page %}
     <div class="acceuil">
+        <div class="conteiner">
+            <div class="title">
+                <h2>Bienvenue sur Carte !<br>
+                <span>Carte un système de vote en ligne pour vous simplifier la vie</span></h2>
+            </div>
+            {% if connect == True %}
+                <br><div class="action">
+                    <a href="{{url_for('creat_new_vote')}}">Crée un vote</a>
+                    <a href="{{url_for('tableau_de_bord')}}">Tableau de bord</a>
+                </div><br>
+            {% endif%}
+        </div>
         {% if connect == False %}
             <div class="register-content">
                 <div class="register">
