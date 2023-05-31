@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block page %}
+   <div class="dash_board">
+    <div class="form">
+        {% for vote in  votes %}
+            <div class="vote"><a href="{{url_for('my_statistique', UserName=session['UserName'], Access=vote.Access)}}">
+                <h1>{{ vote.VoteTitle }}</h1>
+                <h2>Choix multiple : {{vote.MultipleChoice}}</h2>
+                <p>{{vote.VoteStatue}}</p>
+            </a></div>
+        {% endfor %}
+    </div>
+   </div>
+{% endblock %}

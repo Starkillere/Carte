@@ -192,7 +192,7 @@ def print_vote(access):
 def tableau_de_bord():
     if "CONNECT" in session:
         voteselect = Votes.query.filter_by(UserID=session["UserID"]).all()
-        return render_template("tableau_de_bord.html", votes=voteselect, connect=session['CONNECT'])
+        return render_template("tableau_de_bord.html", votes=voteselect, connect=session['CONNECT'], session=session)
     return redirect(request.url)
 
 @app.route('/my-statistique-for/<UserName>/<Access>', methods=['GET', 'POST'])
@@ -200,7 +200,7 @@ def my_statistique(UserName, Access):
     if "CONNECT" in session:
         if session["UserName"] == UserName:
             if request.method == 'POST':
-               return send_file(os.path.join((f"CarteApp/static/{app.config['CSVFOLDER']}"), Access+'.csv'), attachment_filename='Mydata.pdf')
+               return send_file(os.path.join((f"CarteApp/static/{app.config['CSVFOLDER']}"), Access+'.csv'))
             mystat = MyStat.MyStat(os.path.join((f"CarteApp/static/{app.config['CSVFOLDER']}"), Access+'.csv'))
-            return render_template('my-statistique.html', stat=mystat.dict_smoll_stat(), head=mystat.head, connect=session['CONNECT'])
+            return render_template('my-statistique.html', stat=mystat.dict_smoll_stat(), head=mystat.head, connect=session['CONNECT'], session=session, access=Access)
     return redirect(request.url)

@@ -1,0 +1,8 @@
+.dash_board .form
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px 5em;
+    padding-top: 2%;
+}
+
